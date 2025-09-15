@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Simplotel Frontend Assignment - Responsive Restaurant Website built with HTML and CSS">
+  <meta name="author" content="Your Name">
+  <meta name="keywords" content="Restaurant, Food, Simplotel, Assignment, Frontend Developer">
+  <title>Simplotel Assignment</title>
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header-container">
+      <h1 class="logo">The Green Fork</h1>
+      <nav class="nav">
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <img src="images/menu-bar.png" alt="menu toggle" class="menu-toggle">
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" style="background-image: url('images/table.jpg');">
+    <div class="hero-content fade-in">
+      <h2>Delicious Food, Made Simple</h2>
+      <p>Experience mouth-watering dishes crafted with love and served fresh every time.</p>
+      <a href="#menu" class="btn">
+        Explore Menu 
+        <img src="images/icons8-arrow-30.png" alt="arrow" class="arrow">
+      </a>
+    </div>
+  </section>
+
+  <!-- MENU SECTION -->
+  <section id="menu" class="menu fade-in">
+    <h2 class="section-title">Our Specials</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="images/burger.jpg" alt="Juicy Burger" loading="lazy">
+        <h3>Juicy Burger</h3>
+        <p>Perfectly grilled burger with fresh veggies and cheese.</p>
+      </div>
+      <div class="card">
+        <img src="images/food.jpg" alt="Healthy Bowl" loading="lazy">
+        <h3>Healthy Bowl</h3>
+        <p>Nutritious and balanced meal packed with flavor.</p>
+      </div>
+      <div class="card">
+        <img src="images/street.jpg" alt="Family Table" loading="lazy">
+        <h3>Family Table</h3>
+        <p>Enjoy our chef’s special meals with your loved ones.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="gallery fade-in">
+    <h2 class="section-title">Our Place</h2>
+    <div class="gallery-grid">
+      <img src="images/street.jpg" alt="Restaurant Street View" loading="lazy">
+      <img src="images/food.jpg" alt="Plated Food" loading="lazy">
+      <img src="images/burger.jpg" alt="Tasty Burger" loading="lazy">
+    </div>
+  </section>
+
+  <!-- CONTACT FORM -->
+  <section id="contact" class="contact fade-in">
+    <h2 class="section-title">Contact Us</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" rows="4" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+  <div class="footer-container">
+    <p>&copy; 2025 <span class="brand">The Green Fork</span>. All Rights Reserved.</p>
+    <div class="socials">
+      <a href="#" aria-label="Facebook">
+        <img src="images/facebook.png" alt="Facebook" loading="lazy">
+      </a>
+      <a href="#" aria-label="Instagram">
+        <img src="images/instagram.jpg" alt="Instagram" loading="lazy">
+      </a>
+      <a href="#" aria-label="Twitter / X">
+        <img src="images/x.png" alt="Twitter/X" loading="lazy">
+      </a>
+    </div>
+  </div>
+</footer>
+
+
+  <!-- Back to Top Button -->
+  <a href="#" class="back-to-top">⬆</a>
+
+  <script>
+    // Mobile menu toggle
+    const toggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Fade-in animation
+    const faders = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    faders.forEach(fade => observer.observe(fade));
+
+    // Show back-to-top button
+    const backToTop = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 200) {
+        backToTop.classList.add('show');
+      } else {
+        backToTop.classList.remove('show');
+      }
+    });
+  </script>
+</body>
+</html>
