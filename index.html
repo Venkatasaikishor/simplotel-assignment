@@ -70,24 +70,19 @@
     </div>
   </section>
 
-  <!-- RESERVATION FORM -->
-   <section id="reservation" class="reservation fade-in">
-    <h2 class="section-title">Book a Table</h2>
-    <div class="reservation-container">
-      <form class="reservation-form" onsubmit="event.preventDefault(); alert('✅ Your table has been reserved successfully!');">
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <input type="number" placeholder="Number of Guests" required>
-        <input type="date" required>
-        <input type="time" required>
-        <button type="submit" class="btn">Reserve Table</button>
-      </form>
-      <div class="reservation-img">
-        <img src="images/reservation.jpg" alt="Reserve a Table">
-      </div>
-    </div>
+  <!-- RESERVATION -->
+  <section id="reservation" class="reservation fade-in">
+    <h2 class="section-title">Reserve a Table</h2>
+    <form class="reservation-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <input type="date" required>
+      <input type="time" required>
+      <input type="number" placeholder="No. of Guests" min="1" required>
+      <textarea placeholder="Special Requests" rows="3"></textarea>
+      <button type="submit" class="btn">Book Now</button>
+    </form>
   </section>
-
 
   <!-- CONTACT FORM -->
    <section id="contact" class="contact fade-in">
@@ -103,9 +98,9 @@
       <!-- Google Map -->
        <div class="map">
         <iframe src="https://maps.google.com/maps?q=Hyderabad&t=&z=13&ie=UTF8&iwloc=&output=embed" 
-        loading="lazy"
-        style="border:0;" 
-        allowfullscreen>
+            loading="lazy"
+            style="border:0;" 
+            allowfullscreen>
         </iframe>
       </div>
     </div>
