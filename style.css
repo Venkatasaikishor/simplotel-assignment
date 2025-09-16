@@ -237,6 +237,12 @@ img {
   gap: 1rem;
 }
 
+.section-title span {
+  display: inline-block; 
+  margin-right: 750px; 
+}
+
+
 .contact-form input,
 .contact-form textarea {
   padding: 0.8rem;
